@@ -1,0 +1,12 @@
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclon.exe.config
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclon.exe
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclon.pdb
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.csprojAssemblyReference.cache
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.LoginForm.resources
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.Properties.Resources.resources
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.csproj.GenerateResource.cache
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.exe
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.pdb
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.ConsultingForm.resources
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclonDatabase.mdf
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclonDatabase_log.ldf
