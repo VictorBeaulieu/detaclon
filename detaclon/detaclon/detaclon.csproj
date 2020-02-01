@@ -95,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="detaclonDatabaseDataSet.xsc">
       <DependentUpon>detaclonDatabaseDataSet.xsd</DependentUpon>
@@ -133,6 +134,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="aisle.ico" />
     <Content Include="detaclonDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -140,6 +142,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>detaclonDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\store.png" />
+    <None Include="Resources\product.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\aisle.png" />
+    <None Include="Resources\icons8-sport-80.png" />
+    <None Include="Resources\icons8-sport-80.ico" />
+    <None Include="Resources\icons8-sport-40.png" />
+    <None Include="Resources\icons8-sport-40.ico" />
+    <None Include="Resources\icons8-sport-30.png" />
+    <None Include="Resources\icons8-sport-30.ico" />
+    <None Include="Resources\icons8-sport-16.png" />
+    <None Include="Resources\icons8-sport-16.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

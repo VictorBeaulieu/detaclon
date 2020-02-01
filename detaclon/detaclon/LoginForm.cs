@@ -23,11 +23,12 @@ namespace detaclon
             InitializeComponent();
             login_PWD.PasswordChar = '*';
             connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
-            //detaclonDatabaseConnectionString
+            Program.login_succeed = false;
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
+            Program.run = false;
             this.Close();
         }
 
@@ -51,12 +52,11 @@ namespace detaclon
                     
                     string id = row.Field<string>("LoginID");
                     string pwd = row.Field<string>("LoginPWD");
-                    Console.WriteLine(id);
-                    Console.WriteLine(pwd);
                     if (login_ID.Text.Equals(id) && login_PWD.Text.Equals(pwd))
                     {
                         Program.login_succeed = true;
                         Program.user_role = row.Field<string>("Role");
+                        Console.WriteLine(Program.user_role);
                         break;
                     }
                 }
@@ -64,7 +64,11 @@ namespace detaclon
 
 
             }
-            this.Close();
+            if (Program.login_succeed == true)
+            {
+                Program.run = true;
+                this.Close();
+            }
         }
         
 
