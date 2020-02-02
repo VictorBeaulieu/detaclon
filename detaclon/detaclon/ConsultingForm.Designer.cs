@@ -65,10 +65,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_validate_profil = new System.Windows.Forms.Button();
+            this.product_quantity = new System.Windows.Forms.NumericUpDown();
+            this.btn_product_modify = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaclonProductDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaclonProductDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product_quantity)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -185,6 +188,7 @@
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(401, 411);
             this.dataGridView.TabIndex = 4;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // detaclonProductDataSet
             // 
@@ -376,11 +380,29 @@
             this.btn_validate_profil.UseVisualStyleBackColor = true;
             this.btn_validate_profil.Click += new System.EventHandler(this.btn_validate_profil_Click);
             // 
+            // product_quantity
+            // 
+            this.product_quantity.Location = new System.Drawing.Point(419, 166);
+            this.product_quantity.Name = "product_quantity";
+            this.product_quantity.Size = new System.Drawing.Size(75, 20);
+            this.product_quantity.TabIndex = 27;
+            // 
+            // btn_product_modify
+            // 
+            this.btn_product_modify.Location = new System.Drawing.Point(419, 192);
+            this.btn_product_modify.Name = "btn_product_modify";
+            this.btn_product_modify.Size = new System.Drawing.Size(75, 39);
+            this.btn_product_modify.TabIndex = 13;
+            this.btn_product_modify.Text = "Modifier la quantité";
+            this.btn_product_modify.UseVisualStyleBackColor = true;
+            this.btn_product_modify.Click += new System.EventHandler(this.btn_product_modify_Click);
+            // 
             // ConsultingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 450);
+            this.Controls.Add(this.product_quantity);
             this.Controls.Add(this.btn_validate_profil);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -392,6 +414,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_product_modify);
             this.Controls.Add(this.btn_del_user);
             this.Controls.Add(this.btn_add_user);
             this.Controls.Add(this.btn_del_store);
@@ -413,6 +436,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaclonProductDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaclonProductDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.product_quantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,5 +478,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_validate_profil;
+        private System.Windows.Forms.NumericUpDown product_quantity;
+        private System.Windows.Forms.Button btn_product_modify;
     }
 }

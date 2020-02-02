@@ -184,6 +184,8 @@ namespace detaclon
             btn_add_store.Visible = false;
             btn_add_user.Visible = false;
             btn_validate_profil.Visible = true;
+            product_quantity.Visible = false;
+            btn_product_modify.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = false;
@@ -232,6 +234,8 @@ namespace detaclon
             btn_add_store.Visible = false;
             btn_add_user.Visible = false;
             btn_validate_profil.Visible = false;
+            product_quantity.Visible = true;
+            btn_product_modify.Visible = true;
 
             btn_del_product.Visible = true;
             btn_del_aisle.Visible = false;
@@ -245,6 +249,8 @@ namespace detaclon
             btn_add_store.Visible = false;
             btn_add_user.Visible = false;
             btn_validate_profil.Visible = false;
+            product_quantity.Visible = false;
+            btn_product_modify.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = true;
@@ -258,6 +264,8 @@ namespace detaclon
             btn_add_store.Visible = true;
             btn_add_user.Visible = false;
             btn_validate_profil.Visible = false;
+            product_quantity.Visible = false;
+            btn_product_modify.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = false;
@@ -271,6 +279,8 @@ namespace detaclon
             btn_add_store.Visible = false;
             btn_add_user.Visible = true;
             btn_validate_profil.Visible = false;
+            product_quantity.Visible = false;
+            btn_product_modify.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = false;
@@ -478,6 +488,48 @@ namespace detaclon
             display_profil();
         }
 
+        private void btn_product_modify_Click(object sender, EventArgs e)
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
+            SqlConnection connection;
+            DataTable table = new DataTable();
+            string query = "SELECT Nom FROM [PRODUCT]";
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            {
+                connection.Open();
+                adapter.Fill(table);
+                connection.Close();
+            }
+
+            string name = table.Rows[dataGridView.CurrentRow.Index].Field<string>("Nom");
+            Console.WriteLine(name);
+
+            query = "UPDATE[PRODUCT] SET Quantité = @count WHERE Nom ='" + name + "'";
+
+
+            using (connection = new SqlConnection(connectionString))
+            using (SqlCommand cmd = new SqlCommand(query, connection))
+            {
+
+
+                connection.Open();
+                cmd.Parameters.AddWithValue("@count", product_quantity.Value);
+                cmd.ExecuteScalar();
+                connection.Close();
+            }
+            display_product();
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            if (dataGridView.Columns[dataGridView.CurrentCell.ColumnIndex].HeaderText == "Quantité")
+            {
+                product_quantity.Value = Convert.ToInt16(dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+            }
+                
+        }
     }
 }
 
