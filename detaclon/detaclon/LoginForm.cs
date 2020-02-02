@@ -55,8 +55,10 @@ namespace detaclon
                     if (login_ID.Text.Equals(id) && login_PWD.Text.Equals(pwd))
                     {
                         Program.login_succeed = true;
+                        Program.login_ID = id;
                         Program.user_role = row.Field<string>("Role");
-                        Console.WriteLine(Program.user_role);
+                        Program.firstname = row.Field<string>("FirstName");
+                        Program.lastname= row.Field<string>("LastName");
                         break;
                     }
                     

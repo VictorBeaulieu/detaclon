@@ -63,6 +63,7 @@ namespace detaclon
 
         private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             display_user();
             display_view_user();
         }
@@ -90,12 +91,14 @@ namespace detaclon
         private void monCompteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView.Visible = false;
+            display_profil();
         }
 
 
 
         private void display_product()
         {
+            display_off_profil();
             dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
@@ -113,6 +116,7 @@ namespace detaclon
         }
         private void display_aisle()
         {
+            display_off_profil();
             dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
@@ -129,6 +133,7 @@ namespace detaclon
         }
         private void display_store()
         {
+            display_off_profil();
             dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
@@ -145,6 +150,7 @@ namespace detaclon
         }
         private void display_user()
         {
+            display_off_profil();
             dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
@@ -159,6 +165,65 @@ namespace detaclon
             }
             dataGridView.DataSource = table;
         }
+        private void display_profil()
+        {
+            label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+
+            textbox_firstname.Visible = true;
+            textbox_lastname.Visible = true;
+            textbox_loginID.Visible = true;
+            textbox_pwd.Visible = true;
+            textbox_role.Visible = true;
+
+            btn_add_product.Visible = false;
+            btn_add_aisle.Visible = false;
+            btn_add_store.Visible = false;
+            btn_add_user.Visible = false;
+            btn_validate_profil.Visible = true;
+
+            btn_del_product.Visible = false;
+            btn_del_aisle.Visible = false;
+            btn_del_store.Visible = false;
+            btn_del_user.Visible = false;
+
+            //SELECT FirstName, LastName, LoginID, LoginPWD, Role FROM[USER] WHERE LoginID =
+            string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
+            SqlConnection connection;
+            DataTable table = new DataTable();
+            string query = "SELECT FirstName, LastName, LoginId, LoginPWD, Role FROM[USER] WHERE LoginID =\'"+ Program.login_ID + "\'";
+            using (connection = new SqlConnection(connectionString))
+            using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+            {
+                connection.Open();
+
+                adapter.Fill(table);
+                connection.Close();
+            }
+
+            textbox_firstname.Text = table.Rows[0].Field<string>("FirstName");
+            textbox_lastname.Text = table.Rows[0].Field<string>("LastName");
+            textbox_loginID.Text = table.Rows[0].Field<string>("LoginID");
+            textbox_pwd.Text = table.Rows[0].Field<string>("LoginPWD");
+            textbox_role.Text = table.Rows[0].Field<string>("Role");
+        }
+        private void display_off_profil()
+        {
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+
+            textbox_firstname.Visible = false;
+            textbox_lastname.Visible = false;
+            textbox_loginID.Visible = false;
+            textbox_pwd.Visible = false;
+            textbox_role.Visible = false;
+        }
 
         private void display_view_product()
         {
@@ -166,6 +231,7 @@ namespace detaclon
             btn_add_aisle.Visible = false;
             btn_add_store.Visible = false;
             btn_add_user.Visible = false;
+            btn_validate_profil.Visible = false;
 
             btn_del_product.Visible = true;
             btn_del_aisle.Visible = false;
@@ -178,6 +244,7 @@ namespace detaclon
             btn_add_aisle.Visible = true;
             btn_add_store.Visible = false;
             btn_add_user.Visible = false;
+            btn_validate_profil.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = true;
@@ -190,6 +257,7 @@ namespace detaclon
             btn_add_aisle.Visible = false;
             btn_add_store.Visible = true;
             btn_add_user.Visible = false;
+            btn_validate_profil.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = false;
@@ -202,6 +270,7 @@ namespace detaclon
             btn_add_aisle.Visible = false;
             btn_add_store.Visible = false;
             btn_add_user.Visible = true;
+            btn_validate_profil.Visible = false;
 
             btn_del_product.Visible = false;
             btn_del_aisle.Visible = false;
@@ -383,7 +452,12 @@ namespace detaclon
             form.FormClosed += new FormClosedEventHandler(AddingUserForm_FormClosed);
             form.Show();
         }
-
+        private void btn_validate_profil_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm form = new ChangePasswordForm();
+            form.FormClosed += new FormClosedEventHandler(ChangePasswordForm_FormClosed);
+            form.Show();
+        }
 
 
 
@@ -399,8 +473,11 @@ namespace detaclon
         {
             display_user();
         }
+        void ChangePasswordForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            display_profil();
+        }
 
-        
     }
 }
 

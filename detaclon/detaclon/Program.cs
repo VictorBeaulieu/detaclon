@@ -12,6 +12,9 @@ namespace detaclon
         static public bool login_succeed = false;
         static public bool run = false;
         static public string user_role = "";
+        static public string login_ID = "";
+        static public string firstname = "";
+        static public string lastname = "";
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

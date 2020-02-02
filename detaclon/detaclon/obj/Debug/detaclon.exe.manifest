@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="detaclon.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="detaclon.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
     <assemblyIdentity name="detaclon" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="detaclon.exe" size="270824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="detaclon.exe" size="277992">
       <assemblyIdentity name="detaclon" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OO/cw0KxHdJaw2qOLt65Q8Vm3/BfZ8FnlhBHHkxF1y4=</dsig:DigestValue>
+        <dsig:DigestValue>i4VyH5M02PoV4mPPZ/ofxOndLmHxuUbUFQVVZv1CAiM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -77,7 +77,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Sol3CjcAJYFUkHAiuBQrazqaQam+XAb6RVAPyUEy8Js=</dsig:DigestValue>
+      <dsig:DigestValue>aCtweCjN789Qv+0Mr0pJir8mx1hERaXm7m4D0oIa9Q8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="detaclonDatabase_log.ldf" size="8388608" writeableType="applicationData">
@@ -86,7 +86,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>j+8MklbkNLizZa1hkIOpwdC3E+Gcl3QHYDWySRq0Lw4=</dsig:DigestValue>
+      <dsig:DigestValue>4q9j37O/4PCossRFwwPA9+CuBwuqyh5LQmrMxyZQ8xg=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

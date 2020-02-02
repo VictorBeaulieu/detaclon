@@ -17,3 +17,4 @@ C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclon.applicat
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.exe.manifest
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.application
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.AddingUserForm.resources
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.ChangePasswordForm.resources
