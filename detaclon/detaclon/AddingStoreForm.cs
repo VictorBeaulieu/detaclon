@@ -21,7 +21,7 @@ namespace detaclon
         private void btn_add_Click(object sender, EventArgs e)
         {
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
-            string query = "INSERT INTO [STORE] VALUES (@Ville, @Chef)";
+            string query = "INSERT INTO [STORE] VALUES (@Ville, @Nom, @Prenom)";
 
             SqlConnection connection;
             using (connection = new SqlConnection(connectionString))
@@ -29,7 +29,8 @@ namespace detaclon
             {
 
                 cmd.Parameters.AddWithValue("@Ville", textbox_ville.Text);
-                cmd.Parameters.AddWithValue("@Chef", textbox_chef.Text);
+                cmd.Parameters.AddWithValue("@Nom", textbox_nom.Text);
+                cmd.Parameters.AddWithValue("@Prenom", textbox_prenom.Text);
                 connection.Open();
                 cmd.ExecuteScalar();
                 connection.Close();

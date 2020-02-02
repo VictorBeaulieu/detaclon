@@ -39,7 +39,7 @@
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(194, 114);
+            this.btn_exit.Location = new System.Drawing.Point(197, 67);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(75, 23);
             this.btn_exit.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // btn_connect
             // 
-            this.btn_connect.Location = new System.Drawing.Point(194, 67);
+            this.btn_connect.Location = new System.Drawing.Point(197, 22);
             this.btn_connect.Name = "btn_connect";
             this.btn_connect.Size = new System.Drawing.Size(75, 23);
             this.btn_connect.TabIndex = 1;
@@ -93,13 +93,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 148);
+            this.ClientSize = new System.Drawing.Size(284, 111);
             this.Controls.Add(this.label_ID);
             this.Controls.Add(this.label_PWD);
             this.Controls.Add(this.login_ID);
             this.Controls.Add(this.login_PWD);
             this.Controls.Add(this.btn_connect);
             this.Controls.Add(this.btn_exit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.Text = "Login";

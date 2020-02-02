@@ -89,9 +89,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textbox_name);
             this.Controls.Add(this.btn_add);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddingProductForm";
-            this.Text = "Ajouter un produit";
+            this.Text = "Ajout produit";
             ((System.ComponentModel.ISupportInitialize)(this.numericQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
