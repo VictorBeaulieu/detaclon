@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -62,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddingStoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingStoreForm.Designer.cs">
+      <DependentUpon>AddingStoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConsultingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +80,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>detaclonDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="detaclonProductDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>detaclonProductDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="AddingProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddingProductForm.Designer.cs">
+      <DependentUpon>AddingProductForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +99,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddingStoreForm.resx">
+      <DependentUpon>AddingStoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConsultingForm.resx">
       <DependentUpon>ConsultingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddingProductForm.resx">
+      <DependentUpon>AddingProductForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -107,6 +131,17 @@
     </None>
     <None Include="detaclonDatabaseDataSet.xss">
       <DependentUpon>detaclonDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="detaclonProductDataSet.xsc">
+      <DependentUpon>detaclonProductDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="detaclonProductDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>detaclonProductDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="detaclonProductDataSet.xss">
+      <DependentUpon>detaclonProductDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -136,12 +171,13 @@
   <ItemGroup>
     <Content Include="aisle.ico" />
     <Content Include="detaclonDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="detaclonDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DependentUpon>detaclonDatabase.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\user.png" />
     <None Include="Resources\store.png" />
     <None Include="Resources\product.png" />
     <None Include="Resources\logout.png" />

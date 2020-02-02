@@ -10,3 +10,5 @@ C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.pdb
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.ConsultingForm.resources
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclonDatabase.mdf
 C:\Users\Victor\Documents\detaclon\detaclon\detaclon\bin\Debug\detaclonDatabase_log.ldf
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.AddingProductForm.resources
+C:\Users\Victor\Documents\detaclon\detaclon\detaclon\obj\Debug\detaclon.AddingStoreForm.resources
