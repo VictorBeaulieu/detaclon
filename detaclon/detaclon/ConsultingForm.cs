@@ -80,19 +80,23 @@ namespace detaclon
         {
             display_aisle();
             display_view_aisle();
+            
         }
         private void magasinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             display_store();
             display_view_store();
         }
+        private void monCompteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView.Visible = false;
+        }
 
-        
 
 
         private void display_product()
         {
-            
+            dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
             DataTable table = new DataTable();
@@ -109,6 +113,7 @@ namespace detaclon
         }
         private void display_aisle()
         {
+            dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
             DataTable table = new DataTable();
@@ -124,11 +129,12 @@ namespace detaclon
         }
         private void display_store()
         {
+            dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
             DataTable table = new DataTable();
             using (connection = new SqlConnection(connectionString))
-            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ville,\"Chef magasin\" FROM [STORE]", connection))
+            using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ville,Nom,Prénom FROM [STORE]", connection))
             {
                 connection.Open();
 
@@ -139,6 +145,7 @@ namespace detaclon
         }
         private void display_user()
         {
+            dataGridView.Visible = true;
             string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
             SqlConnection connection;
             DataTable table = new DataTable();
@@ -284,6 +291,75 @@ namespace detaclon
         {
 
         }
+        private void btn_del_user_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.Columns[dataGridView.CurrentCell.ColumnIndex].HeaderText == "FirstName")
+            {
+                string caption = "Suppresion d'utiliateur";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                string str = "Voulez supprimer l'utilisateur \"" + dataGridView.CurrentCell.Value.ToString() + "\" ?";
+                MessageBoxResult result = MessageBox.Show(str, caption, button, icon);
+                switch (result)
+                {
+
+                    case MessageBoxResult.Yes:
+
+
+                        string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
+                        string query = "DELETE FROM [USER] WHERE[FirstName] = '" + @dataGridView.CurrentCell.Value.ToString() + "'";
+
+                        SqlConnection connection;
+                        using (connection = new SqlConnection(connectionString))
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            Console.WriteLine(query);
+                            connection.Open();
+                            cmd.ExecuteScalar();
+                            connection.Close();
+                        }
+                        display_user();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (dataGridView.Columns[dataGridView.CurrentCell.ColumnIndex].HeaderText == "LastName")
+            {
+                string caption = "Suppresion d'utiliateur";
+                MessageBoxButton button = MessageBoxButton.YesNo;
+                MessageBoxImage icon = MessageBoxImage.Warning;
+                string str = "Voulez supprimer l'utilisateur \"" + dataGridView.CurrentCell.Value.ToString() + "\" ?";
+                MessageBoxResult result = MessageBox.Show(str, caption, button, icon);
+                switch (result)
+                {
+
+                    case MessageBoxResult.Yes:
+
+
+                        string connectionString = ConfigurationManager.ConnectionStrings["detaclon.Properties.Settings.detaclonDatabaseConnectionString"].ConnectionString;
+                        string query = "DELETE FROM [USER] WHERE[LastName] = '" + @dataGridView.CurrentCell.Value.ToString() + "'";
+
+                        SqlConnection connection;
+                        using (connection = new SqlConnection(connectionString))
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            Console.WriteLine(query);
+                            connection.Open();
+                            cmd.ExecuteScalar();
+                            connection.Close();
+                        }
+                        display_user();
+                        break;
+                    case MessageBoxResult.No:
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
 
         private void btn_add_aisle_Click(object sender, EventArgs e)
         {
@@ -301,10 +377,15 @@ namespace detaclon
             form.FormClosed += new FormClosedEventHandler(AddingStoreForm_FormClosed);
             form.Show();
         }
+        private void btn_add_user_Click(object sender, EventArgs e)
+        {
+            AddingUserForm form = new AddingUserForm();
+            form.FormClosed += new FormClosedEventHandler(AddingUserForm_FormClosed);
+            form.Show();
+        }
 
 
 
-        
 
         void AddingProductForm_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -314,6 +395,12 @@ namespace detaclon
         {
             display_store();
         }
+        void AddingUserForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            display_user();
+        }
+
+        
     }
 }
 

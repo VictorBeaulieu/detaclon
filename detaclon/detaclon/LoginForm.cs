@@ -59,6 +59,7 @@ namespace detaclon
                         Console.WriteLine(Program.user_role);
                         break;
                     }
+                    
                 }
 
 
@@ -68,6 +69,10 @@ namespace detaclon
             {
                 Program.run = true;
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Votre identifiant ou mot de passe est incorrect","Erreur d'authetification",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         

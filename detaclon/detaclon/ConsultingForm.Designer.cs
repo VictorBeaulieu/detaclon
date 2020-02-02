@@ -33,12 +33,7 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.affichageToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.magasinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rayonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deconnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.affichageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +48,12 @@
             this.btn_del_store = new System.Windows.Forms.Button();
             this.btn_del_user = new System.Windows.Forms.Button();
             this.btn_add_user = new System.Windows.Forms.Button();
+            this.monCompteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.magasinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rayonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deconnectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detaclonProductDataSet)).BeginInit();
@@ -90,54 +91,15 @@
             this.affichageToolStripMenuItem1.Size = new System.Drawing.Size(70, 20);
             this.affichageToolStripMenuItem1.Text = "Affichage";
             // 
-            // magasinToolStripMenuItem
-            // 
-            this.magasinToolStripMenuItem.Image = global::detaclon.Properties.Resources.store;
-            this.magasinToolStripMenuItem.Name = "magasinToolStripMenuItem";
-            this.magasinToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.magasinToolStripMenuItem.Text = "Magasin";
-            this.magasinToolStripMenuItem.Click += new System.EventHandler(this.magasinToolStripMenuItem_Click);
-            // 
-            // rayonToolStripMenuItem
-            // 
-            this.rayonToolStripMenuItem.Image = global::detaclon.Properties.Resources.aisle;
-            this.rayonToolStripMenuItem.Name = "rayonToolStripMenuItem";
-            this.rayonToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.rayonToolStripMenuItem.Text = "Rayon";
-            this.rayonToolStripMenuItem.Click += new System.EventHandler(this.rayonToolStripMenuItem_Click);
-            // 
-            // produitToolStripMenuItem
-            // 
-            this.produitToolStripMenuItem.Image = global::detaclon.Properties.Resources.product;
-            this.produitToolStripMenuItem.Name = "produitToolStripMenuItem";
-            this.produitToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.produitToolStripMenuItem.Text = "Produit";
-            this.produitToolStripMenuItem.Click += new System.EventHandler(this.produitToolStripMenuItem_Click);
-            // 
             // optionToolStripMenuItem1
             // 
             this.optionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.utilisateurToolStripMenuItem,
+            this.monCompteToolStripMenuItem,
             this.deconnectionToolStripMenuItem});
             this.optionToolStripMenuItem1.Name = "optionToolStripMenuItem1";
             this.optionToolStripMenuItem1.Size = new System.Drawing.Size(56, 20);
             this.optionToolStripMenuItem1.Text = "Option";
-            // 
-            // utilisateurToolStripMenuItem
-            // 
-            this.utilisateurToolStripMenuItem.Image = global::detaclon.Properties.Resources.user;
-            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
-            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.utilisateurToolStripMenuItem.Text = "Utilisateur";
-            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
-            // 
-            // deconnectionToolStripMenuItem
-            // 
-            this.deconnectionToolStripMenuItem.Image = global::detaclon.Properties.Resources.logout;
-            this.deconnectionToolStripMenuItem.Name = "deconnectionToolStripMenuItem";
-            this.deconnectionToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.deconnectionToolStripMenuItem.Text = "Déconnexion";
-            this.deconnectionToolStripMenuItem.Click += new System.EventHandler(this.deconnectionToolStripMenuItem_Click);
             // 
             // affichageToolStripMenuItem
             // 
@@ -243,6 +205,7 @@
             this.btn_del_user.TabIndex = 13;
             this.btn_del_user.Text = "Supprimer un utilisateur";
             this.btn_del_user.UseVisualStyleBackColor = true;
+            this.btn_del_user.Click += new System.EventHandler(this.btn_del_user_Click);
             // 
             // btn_add_user
             // 
@@ -252,6 +215,55 @@
             this.btn_add_user.TabIndex = 12;
             this.btn_add_user.Text = "Ajouter un utilisateur";
             this.btn_add_user.UseVisualStyleBackColor = true;
+            this.btn_add_user.Click += new System.EventHandler(this.btn_add_user_Click);
+            // 
+            // monCompteToolStripMenuItem
+            // 
+            this.monCompteToolStripMenuItem.Image = global::detaclon.Properties.Resources.user_2;
+            this.monCompteToolStripMenuItem.Name = "monCompteToolStripMenuItem";
+            this.monCompteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.monCompteToolStripMenuItem.Text = "Mon compte";
+            this.monCompteToolStripMenuItem.Click += new System.EventHandler(this.monCompteToolStripMenuItem_Click);
+            // 
+            // magasinToolStripMenuItem
+            // 
+            this.magasinToolStripMenuItem.Image = global::detaclon.Properties.Resources.store;
+            this.magasinToolStripMenuItem.Name = "magasinToolStripMenuItem";
+            this.magasinToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.magasinToolStripMenuItem.Text = "Magasin";
+            this.magasinToolStripMenuItem.Click += new System.EventHandler(this.magasinToolStripMenuItem_Click);
+            // 
+            // rayonToolStripMenuItem
+            // 
+            this.rayonToolStripMenuItem.Image = global::detaclon.Properties.Resources.aisle;
+            this.rayonToolStripMenuItem.Name = "rayonToolStripMenuItem";
+            this.rayonToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.rayonToolStripMenuItem.Text = "Rayon";
+            this.rayonToolStripMenuItem.Click += new System.EventHandler(this.rayonToolStripMenuItem_Click);
+            // 
+            // produitToolStripMenuItem
+            // 
+            this.produitToolStripMenuItem.Image = global::detaclon.Properties.Resources.product;
+            this.produitToolStripMenuItem.Name = "produitToolStripMenuItem";
+            this.produitToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.produitToolStripMenuItem.Text = "Produit";
+            this.produitToolStripMenuItem.Click += new System.EventHandler(this.produitToolStripMenuItem_Click);
+            // 
+            // utilisateurToolStripMenuItem
+            // 
+            this.utilisateurToolStripMenuItem.Image = global::detaclon.Properties.Resources.user;
+            this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
+            this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.utilisateurToolStripMenuItem.Text = "Gestion utilisateur";
+            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
+            // 
+            // deconnectionToolStripMenuItem
+            // 
+            this.deconnectionToolStripMenuItem.Image = global::detaclon.Properties.Resources.logout;
+            this.deconnectionToolStripMenuItem.Name = "deconnectionToolStripMenuItem";
+            this.deconnectionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deconnectionToolStripMenuItem.Text = "Déconnexion";
+            this.deconnectionToolStripMenuItem.Click += new System.EventHandler(this.deconnectionToolStripMenuItem_Click);
             // 
             // ConsultingForm
             // 
@@ -308,5 +320,6 @@
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
         private System.Windows.Forms.Button btn_del_user;
         private System.Windows.Forms.Button btn_add_user;
+        private System.Windows.Forms.ToolStripMenuItem monCompteToolStripMenuItem;
     }
 }
