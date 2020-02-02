@@ -37,7 +37,7 @@ namespace detaclon
                 case "chef de magasin":
                     Console.WriteLine("Chef de magasin");                    
                     magasinToolStripMenuItem.Enabled = false;
-                    utilisateurToolStripMenuItem.Enabled = false;
+                    
                     display_aisle();
                     display_view_aisle();
                     break;
